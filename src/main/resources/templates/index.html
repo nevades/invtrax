@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="fragments/head :: head('Home - InvTraX')"></head>
+
+  <body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <div class="container">
+      <h1 class="mt-5">Welcome to InvTraX</h1>
+      <p class="lead">Your inventory tracking solution.</p>
+      <a class="btn btn-primary" href="/items">Items</a>
+    </div>
+    <div th:replace="fragments/scripts :: scripts"></div>
+  </body>
+</html>

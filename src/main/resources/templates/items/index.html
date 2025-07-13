@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="fragments/head :: head('Items - InvTraX')"></head>
+
+  <body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <div class="container">
+      <h1 class="mt-5">Item List</h1>
+      <a class="btn btn-primary" href="/items/create">New Item</a>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="item : ${items}">
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.description}"></td>
+            <td>
+              <a
+                class="btn btn-sm btn-warning"
+                th:href="@{/items/edit(id=${item.id})}"
+                >Edit</a
+              >
+              <a
+                class="btn btn-sm btn-danger"
+                th:href="@{/items/delete(id=${item.id})}"
+                >Delete</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div th:replace="fragments/scripts :: scripts"></div>
+  </body>
+</html>
